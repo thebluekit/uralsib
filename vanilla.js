@@ -42,3 +42,42 @@ function hideInfo() {
     swipeAction(info_card, "close");
     setTimeout(swipeAction, 160, card, "open");
 }
+
+
+/**
+ * Класс Car предназначен для описания и взаимодействия карточки машины
+ */
+
+class Car {
+    name = "";
+
+    logo_src = "";
+    image_src = "";
+
+    price = 0;
+    dialer = "";
+    number_of_cars = 0;
+
+    /**
+     * Конструктор класса
+     * Вызывает метод, устанавливающий параметры автомобиля
+     */
+    constructor() {
+        this.getCarDescription();
+    }
+
+    /**
+     * public method, устанавливающий параметры автомобиля
+     */
+    getCarDescription(){
+        this.name = "Mercedes-benz E class";
+        this.logo_src = "img/cars/mb-logo.png";
+        this.image_src ="img/cars/mercedes-ben-e-class.png";
+        this.price = 2500000;
+        this.dialer = "Мерседес Авто";
+        this.number_of_cars = 150
+    }
+
+}
+
+car_1 = new Car();
