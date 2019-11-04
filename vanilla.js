@@ -1,3 +1,5 @@
+const SWIPE_TIMEOUT = 160;
+
 /**
  * Переворачивает конкретную карточку с информацией о машине
  * @param {object} card Объект карты, над которой неободимо совершить действие
@@ -28,7 +30,7 @@ function showInfo() {
     let card = document.getElementsByClassName("card-container")[0];
     let info_card = document.getElementsByClassName("card-container-info")[0];
     swipeAction(card, "close");
-    setTimeout(swipeAction, 160, info_card, "open");
+    setTimeout(swipeAction, SWIPE_TIMEOUT, info_card, "open");
 }
 
 /**
@@ -40,7 +42,7 @@ function hideInfo() {
     let card = document.getElementsByClassName("card-container")[0];
     let info_card = document.getElementsByClassName("card-container-info")[0];
     swipeAction(info_card, "close");
-    setTimeout(swipeAction, 160, card, "open");
+    setTimeout(swipeAction, SWIPE_TIMEOUT, card, "open");
 }
 
 
@@ -49,23 +51,24 @@ function hideInfo() {
  */
 
 class Car {
-    car_elem = {};
-
-    id = 0;
-    name = "";
-
-    logo_src = "";
-    image_src = "";
-
-    price = 0;
-    dialer = "";
-    number_of_cars = 0;
-
     /**
      * Конструктор класса
      * Вызывает метод, устанавливающий параметры автомобиля
      */
     constructor() {
+
+        this.car_elem = {};
+        this.id = 0;
+        this.name = "";
+
+        this.logo_src = "";
+        this.image_src = "";
+
+        this.price = 0;
+        this.dialer = "";
+        this.number_of_cars = 0;
+
+
         this.getCarDescription();
 
         this.setCarElement(this.id);
@@ -138,11 +141,10 @@ class Car {
             }
             count++;
         }
-        price_result = price_result.split("").reverse().join("");
+        price_result = price_result.split("").reverse().join("") + "₽";
         return price_result;
     }
 
-
 }
 
-car_1 = new Car();
+let car_1 = new Car();
