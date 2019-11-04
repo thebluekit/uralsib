@@ -5,6 +5,15 @@ body{
 }
 
 .card-container{
+    width: 250px;
+    height: 345px;
+    position: static;
+    display:inline-block;
+    float: left;
+    margin-right: 20px;
+}
+
+.car-container{
     position: absolute;
     width: 250px;
     height: 345px;

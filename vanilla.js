@@ -24,11 +24,15 @@ function swipeAction(card, action) {
 /**
  * Сворачивает основную карточку, разворачивает карточку с информацией
  * Используется при нажатии на кнопку "button-info"
+ * @param {object} element Объект кнопки, для получения id ее родителя
  */
 
-function showInfo() {
-    let card = document.getElementsByClassName("card-container")[0];
-    let info_card = document.getElementsByClassName("card-container-info")[0];
+function showInfo(element) {
+    let parent = element.parentNode.parentNode;
+    let car_elem = document.getElementById(parent.id);
+
+    let card = car_elem.getElementsByClassName("car-container")[0];
+    let info_card = car_elem.getElementsByClassName("card-container-info")[0];
     swipeAction(card, "close");
     setTimeout(swipeAction, SWIPE_TIMEOUT, info_card, "open");
 }
@@ -36,29 +40,33 @@ function showInfo() {
 /**
  * Сворачивает карточку с информацией, разворачивает основную карточку
  * Используется при нажатии на кнопку "button-info"
+ * @param {object} element Объект кнопки, для получения id ее родителя
  */
 
-function hideInfo() {
-    let card = document.getElementsByClassName("card-container")[0];
-    let info_card = document.getElementsByClassName("card-container-info")[0];
+function hideInfo(element) {
+    let parent = element.parentNode.parentNode;
+    let car_elem = document.getElementById(parent.id);
+
+    let card = car_elem.getElementsByClassName("car-container")[0];
+    let info_card = car_elem.getElementsByClassName("card-container-info")[0];
     swipeAction(info_card, "close");
     setTimeout(swipeAction, SWIPE_TIMEOUT, card, "open");
 }
 
 
 /**
- * Класс Car предназначен для описания и взаимодействия карточки машины
+ * Класс Card предназначен для описания и взаимодействия карточки машины
  */
 
-class Car {
+class Card {
     /**
      * Конструктор класса
      * Вызывает метод, устанавливающий параметры автомобиля
      */
-    constructor() {
+    constructor(id) {
 
         this.car_elem = {};
-        this.id = 0;
+        this.id = id;
         this.name = "";
 
         this.logo_src = "";
@@ -84,7 +92,6 @@ class Car {
      * public method, устанавливающий параметры автомобиля
      */
     getCarDescription(){
-        this.id = 0;
         this.name = "Mercedes-benz E class";
         this.logo_src = "img/cars/mb-logo.png";
         this.image_src ="img/cars/mercedes-ben-e-class.png";
@@ -94,7 +101,7 @@ class Car {
     }
 
     setCarElement(id){
-        this.car_elem = document.getElementsByClassName("card-container")[0];
+        this.car_elem = document.getElementById(id);
     }
 
     setCarLogo(src){
@@ -147,4 +154,5 @@ class Car {
 
 }
 
-let car_1 = new Car();
+let car_1 = new Card(0);
+let car_2 = new Card(1);
