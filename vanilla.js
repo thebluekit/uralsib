@@ -112,7 +112,7 @@ class Car {
 
     setCarPrice(price){
         let car_price = this.car_elem.getElementsByClassName("car-description-thin")[0];
-        car_price.innerHTML = price;
+        car_price.innerHTML = this.priceConvert(price);
     }
 
     setCarDialer(dialer){
@@ -124,6 +124,24 @@ class Car {
         let car_number = this.car_elem.getElementsByClassName("car-description-thin")[2];
         car_number.innerHTML = number_of_cars;
     }
+
+    priceConvert(price){
+        let price_tmp = price.toString();
+        let price_result = "";
+        let count = 0;
+
+        for (let i = price_tmp.length - 1; i >= 0; i--){
+            price_result += price_tmp.charAt(i);
+
+            if (count % 3 === 2){
+                price_result += ".";
+            }
+            count++;
+        }
+        price_result = price_result.split("").reverse().join("");
+        return price_result;
+    }
+
 
 }
 
