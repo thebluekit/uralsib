@@ -1,7 +1,7 @@
 @import url('fonts/Roboto/css.css');
 
 body{
-    background-color: #e0e0e0;
+    background-color: #ffffff;
 }
 
 .card-container{
@@ -160,8 +160,10 @@ body{
 
 .top-panel {
     width: 100%;
-    height: 50px;
-    background: black;
+    height: 72px;
+    background: #ffffff;
+
+    border-bottom:  solid 1px #eeeeee;
 
     position: fixed;
     top: 0;
@@ -170,20 +172,40 @@ body{
 
 .date-panel{
     height: 30px;
+
     width: 20%;
-    border-radius: 20px;
+    min-width: 200px;
+    max-width: 300px;
+
+    border-radius: 7px;
     background: #e0e0e0;
 
-    position: absolute;
-    left: 50px;
-    top: 10px;
+
     text-align:center;
-    display: flex;
-    align-items: center
+    /*display: flex;*/
+    align-items: center;
+
+    display:inline-block;
+    position: absolute;
+    bottom: 10px;
+    margin-left: 20px;
+
 }
 
 .date-text{
     margin: 0 auto;
     vertical-align:middle;
     font-family: 'Roboto', sans-serif;
+}
+.bank-logo-container{
+    margin-left: 20px;
+    margin-top: 2px;
+
+    display:inline-block;
+
+}
+
+.bank-logo{
+    /*width: 150px;*/
+    height: 65px;
 }
