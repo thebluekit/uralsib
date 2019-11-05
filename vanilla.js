@@ -64,7 +64,6 @@ class Card {
      * Вызывает метод, устанавливающий параметры автомобиля
      */
     constructor(id) {
-
         this.car_elem = {};
         this.id = id;
         this.name = "";
@@ -76,16 +75,11 @@ class Card {
         this.dialer = "";
         this.number_of_cars = 0;
 
+        this.setCarElement(this.id);
 
         this.getCarDescription();
+        this.updateDescription();
 
-        this.setCarElement(this.id);
-        this.setCarLogo(this.logo_src);
-        this.setCarPhoto(this.image_src);
-        this.setCarName(this.name);
-        this.setCarPrice(this.price);
-        this.setCarDialer(this.dialer);
-        this.setCarNumber(this.number_of_cars);
     }
 
     /**
@@ -152,7 +146,19 @@ class Card {
         return price_result;
     }
 
+    updateDescription(){
+        this.setCarLogo(this.logo_src);
+        this.setCarPhoto(this.image_src);
+        this.setCarName(this.name);
+        this.setCarPrice(this.price);
+        this.setCarDialer(this.dialer);
+        this.setCarNumber(this.number_of_cars);
+    }
+
 }
 
-let car_1 = new Card(0);
-let car_2 = new Card(1);
+let car_1 = new Card("0");
+let car_2 = new Card("1");
+let car_3 = new Card("2");
+let car_4 = new Card("3");
+let car_5 = new Card("4");
