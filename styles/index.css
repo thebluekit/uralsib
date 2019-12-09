@@ -1,8 +1,10 @@
-@import url('fonts/Roboto/css.css');
+@import url('../fonts/Roboto/css.css');
 
 body{
     background-color: #ffffff;
 }
+
+/*#0e3263*/
 
 .card-container{
     width: 250px;
@@ -91,7 +93,7 @@ body{
     z-index: 100;
 
     background-color: #fedb31;
-    background-image: url('img/info.png');
+    background-image: url('../img/info.png');
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
