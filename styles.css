@@ -170,36 +170,9 @@ body{
     left: 0;
 }
 
-.date-panel{
-    height: 30px;
-
-    width: 20%;
-    min-width: 200px;
-    max-width: 300px;
-
-    border-radius: 7px;
-    background: #e0e0e0;
-
-
-    text-align:center;
-    /*display: flex;*/
-    align-items: center;
-
-    display:inline-block;
-    position: absolute;
-    bottom: 10px;
-    margin-left: 20px;
-
-}
-
-.date-text{
-    margin: 0 auto;
-    vertical-align:middle;
-    font-family: 'Roboto', sans-serif;
-}
 .bank-logo-container{
-    margin-left: 20px;
-    margin-top: 2px;
+    margin-left: 25px;
+    margin-top: 5px;
 
     display:inline-block;
 
@@ -207,5 +180,42 @@ body{
 
 .bank-logo{
     /*width: 150px;*/
-    height: 65px;
+    height: 55px;
+}
+
+.date-panel-container{
+    height: 55px;
+
+    width: 20%;
+    min-width: 200px;
+    max-width: 300px;
+
+    display:inline-block;
+
+}
+
+.date-panel{
+    position: absolute;
+    top: 25%;
+    margin-left: 26%;
+
+    height: 30px;
+
+    width: 20%;
+    min-width: 200px;
+    max-width: 300px;
+
+    border-radius: 7px;
+    background: #eeeeee;
+
+    padding-top: 10px;
+    text-align:center;
+    align-items: center;
+
+}
+
+.date-text{
+    margin: 0 auto;
+    vertical-align:middle;
+    font-family: 'Roboto', sans-serif;
 }
